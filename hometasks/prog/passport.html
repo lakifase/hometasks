@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM_JS. Считываем информацию из DOM</title>
+
+    <style>
+        body {
+            font-family: Consolas, Menlo, 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.7;
+            background-color: #101418;
+            color: #e6ebf0;
+            margin: 0 auto;
+            padding: 24px 20px 40px;
+            max-width: 780px;
+        }
+
+        h1, h2 {
+            color: #3ddc97;
+            font-weight: normal;
+            line-height: 1.3;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            margin: 10px 0 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            border-bottom: 1px solid #2f3a44;
+            padding-bottom: 6px;
+        }
+
+        .menu {
+            border-bottom: 2px solid #3ddc97;
+            padding: 8px 0 12px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+            margin: 4px 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #e6ebf0;
+            font-size: 15px;
+        }
+
+        .menu a.active,
+        .menu a:hover {
+            color: #3ddc97;
+        }
+
+        .passport {
+            border: 1px solid #3ddc97;
+            padding: 22px;
+            margin: 25px 0;
+            background-color: #161c22;
+        }
+
+        .passport-header {
+            color: #3ddc97;
+            text-align: center;
+            border-bottom: 1px solid #2f3a44;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        .passport-number {
+            color: #ffb454;
+            font-size: 13px;
+            text-align: right;
+        }
+
+        .passport-content {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .photo {
+            width: 145px;
+            height: 185px;
+            border: 1px solid #3ddc97;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #a3adb8;
+            font-size: 12px;
+            padding: 5px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+
+        .data {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .data p {
+            margin: 0 0 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .label {
+            color: #a3adb8;
+        }
+
+        .value {
+            color: #e6ebf0;
+        }
+
+        .page-label {
+            text-align: right;
+            color: #a3adb8;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .link-row {
+            margin: 20px 0;
+        }
+
+        .link-row a {
+            color: #3ddc97;
+        }
+
+        .link-row a:hover {
+            color: #ffb454;
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 16px;
+            background: transparent;
+            color: #3ddc97;
+            border: 1px solid #3ddc97;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 8px 0;
+        }
+
+        button:hover {
+            color: #ffb454;
+            border-color: #ffb454;
+        }
+
+        #output {
+            border-left: 3px solid #3ddc97;
+            background-color: #161c22;
+            padding: 12px 16px;
+            overflow-wrap: anywhere;
+        }
+
+        .note {
+            color: #a3adb8;
+            font-size: 14px;
+        }
+
+        .screenshot {
+            display: block;
+            width: 100%;
+            max-width: 760px;
+            border: 1px solid #2f3a44;
+            margin-top: 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #2f3a44;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 520px) {
+            .passport-content {
+                flex-direction: column;
+            }
+
+            .photo {
+                width: 130px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="main_page.html">Главная</a></li>
+            <li><a href="about.html">Основы</a></li>
+            <li><a href="table.html">Галерея</a></li>
+            <li><a href="form.html">Анкета и заказ</a></li>
+            <li><a href="passport.html" class="active">Паспорт</a></li>
+            <li><a href="task.html">Задача</a></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Саунд-дизайн"
+                   target="_blank" rel="noopener noreferrer">Википедия</a></li>
+        </ul>
+    </nav>
+
+    <h1>DOM_JS. Считываем информацию из DOM</h1>
+
+    <p class="note">
+        Учебная работа: структура документа, элементы HTML
+        и получение данных с помощью JavaScript.
+    </p>
+
+    <section class="passport">
+        <div class="passport-header">
+            <div class="translit">РОССИЙСКАЯ ФЕДЕРАЦИЯ</div>
+            <div class="translit">ПАСПОРТ — СТРАНИЦЫ 2–3</div>
+        </div>
+
+        <div class="passport-number">
+            ДОКУМЕНТ № 001
+        </div>
+
+        <h2>Страница 2. Основные сведения</h2>
+
+        <div class="passport-content">
+            <div class="photo">
+                МЕСТО ДЛЯ ФОТОГРАФИИ
+            </div>
+
+            <div class="data">
+                <p><span class="label">Фамилия:</span> <span class="value translit" id="surname">ИВАНОВ</span></p>
+                <p><span class="label">Имя:</span> <span class="value translit" id="firstName">ИВАН</span></p>
+                <p><span class="label">Год рождения:</span> <span class="value" id="birthYear">2006</span></p>
+                <p><span class="label">Город рождения:</span> <span class="value translit">МОСКВА</span></p>
+                <p><span class="label">Пол:</span> <span class="value translit">МУЖСКОЙ</span></p>
+            </div>
+        </div>
+
+        <div class="page-label">СТРАНИЦА 2 / PERSONAL DATA</div>
+
+        <hr>
+
+        <h2>Страница 3. Дополнительные сведения</h2>
+
+        <div class="data">
+            <p><span class="label">Гражданство:</span> <span class="value translit">РОССИЙСКАЯ ФЕДЕРАЦИЯ</span></p>
+            <p><span class="label">Документ:</span> <span class="value translit">УЧЕБНЫЙ МАКЕТ</span></p>
+            <p><span class="label">Назначение:</span> <span class="value">ИЗУЧЕНИЕ DOM</span></p>
+        </div>
+
+        <div class="page-label">СТРАНИЦА 3 / ADDITIONAL DATA</div>
+    </section>
+
+    <button id="lat">Показать латиницей</button>
+
+    <div class="link-row">
+        <a href="passport_change.html">Изменение данных →</a>
+    </div>
+
+    <h2>Получение данных из DOM</h2>
+
+    <p class="note">
+        Кнопка «Показать латиницей» переводит данные паспорта в латиницу, год рождения — в римские цифры.
+        Кнопка «Считать данные» берёт то, что сейчас показано на странице.
+    </p>
+
+    <p class="note">
+        Данные считываются из абзацев p (второй, третий и четвёртый
+        на странице) с помощью document.getElementsByTagName().
+    </p>
+
+    <button id="readData">Считать данные</button>
+
+    <p id="output">Результат появится после нажатия кнопки.</p>
+
+    <hr>
+
+    <h2>Скриншот работы в инструментах разработчика</h2>
+
+    <p class="note">
+        После проверки страницы сохрани скриншот браузера
+        в папку photos под именем dom_screen.png.
+    </p>
+
+    <img
+        class="screenshot"
+        src="../photos/dom_screen.png"
+        alt="Скриншот получения данных из DOM"
+    >
+
+    <script src="passport.js"></script>
+
+</body>
+</html>

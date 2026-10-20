@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Решение алгоритмической задачи</title>
+
+    <style>
+        body {
+            font-family: Consolas, Menlo, 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.7;
+            background-color: #101418;
+            color: #e6ebf0;
+            margin: 0 auto;
+            padding: 24px 20px 40px;
+            max-width: 780px;
+        }
+
+        h1, h2 {
+            color: #3ddc97;
+            font-weight: normal;
+            line-height: 1.3;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin: 10px 0 28px;
+        }
+
+        h2 {
+            font-size: 21px;
+            margin: 0 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #2f3a44;
+        }
+
+        /* меню */
+        .menu {
+            border-bottom: 2px solid #3ddc97;
+            padding: 8px 0 12px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+            margin: 4px 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #e6ebf0;
+            font-size: 15px;
+        }
+
+        .menu a.active,
+        .menu a:hover {
+            color: #3ddc97;
+        }
+
+        /* карточка с условием */
+        .task-card {
+            border: 1px solid #2f3a44;
+            background-color: #161c22;
+            padding: 22px 24px;
+            margin-bottom: 36px;
+        }
+
+        .description {
+            color: #d0d7de;
+            margin: 0 0 20px;
+        }
+
+        .formula {
+            color: #ffb454;
+            text-align: center;
+            font-size: 22px;
+            padding: 14px;
+            margin: 20px 0;
+            border-top: 1px solid #2f3a44;
+            border-bottom: 1px solid #2f3a44;
+        }
+
+        .note {
+            color: #a3adb8;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* форма */
+        form h2,
+        .section-title {
+            margin-top: 0;
+        }
+
+        .form-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .form-list li {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            color: #d0d7de;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        textarea {
+            font-family: inherit;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #161c22;
+            color: #e6ebf0;
+            border: 1px solid #3a4550;
+            padding: 10px 12px;
+            width: 100%;
+            max-width: 520px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            color: #a3adb8;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3ddc97;
+        }
+
+        input[readonly] {
+            color: #ffb454;
+            background-color: #12171c;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"] {
+            font-family: inherit;
+            font-size: 16px;
+            background: transparent;
+            color: #3ddc97;
+            border: 1px solid #3ddc97;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover,
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            color: #ffb454;
+            border-color: #ffb454;
+        }
+
+        /* результат */
+        .result-box {
+            color: #e6ebf0;
+            font-size: 15px;
+            line-height: 1.8;
+            border-left: 3px solid #3ddc97;
+            background-color: #161c22;
+            padding: 16px 20px;
+            margin-top: 28px;
+            white-space: pre-line;
+            overflow-wrap: anywhere;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #2f3a44;
+            margin: 36px 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="main_page.html">Главная</a></li>
+            <li><a href="about.html">Основы</a></li>
+            <li><a href="table.html">Галерея</a></li>
+            <li><a href="form.html">Анкета и заказ</a></li>
+            <li><a href="passport.html">Паспорт</a></li>
+            <li><a href="task.html" class="active">Задача</a></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Саунд-дизайн"
+                   target="_blank" rel="noopener noreferrer">Википедия</a></li>
+        </ul>
+    </nav>
+
+    <h1>Решение алгоритмической задачи</h1>
+
+    <section class="task-card">
+        <h2>Можно ли выпилить квадратный брус из бревна?</h2>
+
+        <p class="description">
+            Бревно имеет круглое поперечное сечение диаметром D.
+            Определить, поместится ли в этом сечении квадратный
+            брус шириной A. Если не помещается, найти наибольшую
+            возможную ширину квадратного бруса.
+        </p>
+
+        <div class="formula">
+            Amax = D / √2
+        </div>
+
+        <p class="note">
+            Квадрат помещается в круг, если его диагональ
+            не превышает диаметр бревна.
+        </p>
+    </section>
+
+    <h2>Ввод данных и решение</h2>
+
+    <form action="https://www.bing.com/search"
+          method="get"
+          id="UserEnter"
+          name="UserEnter"
+          target="_blank">
+
+        <input type="hidden" name="q" value="Решение алгоритмической задачи: бревно и квадратный брус">
+
+        <ul class="form-list">
+
+            <li>
+                <label for="task">Формулировка задачи:</label>
+                <textarea id="task" name="formulation"
+                          rows="4" readonly>Бревно имеет круглое поперечное сечение диаметром D. Определить, помещается ли квадратный брус шириной A. Если не помещается, найти максимальную возможную ширину квадрата.</textarea>
+            </li>
+
+            <li>
+                <label for="d">Диаметр бревна D:</label>
+                <input id="d" name="D" type="number"
+                       min="0.000001" step="any" value="10" required>
+            </li>
+
+            <li>
+                <label for="a">Ширина квадратного бруса A:</label>
+                <input id="a" name="A" type="number"
+                       min="0.000001" step="any" value="6" required>
+            </li>
+
+            <li>
+                <label for="result">Результат решения задачи:</label>
+                <input id="result" name="result" type="text"
+                       value="не определён" readonly>
+            </li>
+
+            <li class="buttons">
+                <input id="calc" type="button" value="Вычислить">
+                <input id="send" type="button" value="Отправить">
+                <input type="reset" value="Очистить">
+            </li>
+
+        </ul>
+    </form>
+
+    <div class="result-box" id="details">
+        Здесь появится подробное решение задачи.
+    </div>
+
+    <hr>
+
+    <p class="note">
+        Результаты вычисляются в браузере с помощью JavaScript.
+        Кнопка «Отправить» передаёт параметры поисковику Bing.
+    </p>
+
+    <script>
+// Решение задачи: брус шириной A помещается в бревно диаметром D,
+// если диагональ квадрата A * √2 не больше D (то есть A <= D / √2)
+
+const elementD = document.getElementById("d");
+const elementA = document.getElementById("a");
+const elementResult = document.getElementById("result");
+const elementDetails = document.getElementById("details");
+const elementForm = document.getElementById("UserEnter");
+
+// Считает ответ. Возвращает true, если данные корректны
+function solve() {
+    const D = parseFloat(elementD.value);
+    const A = parseFloat(elementA.value);
+
+    if (!(D > 0) || !(A > 0)) {
+        elementResult.value = "Ошибка: введите положительные числа";
+        elementDetails.innerText = "Диаметр бревна и ширина бруса должны быть больше нуля.";
+        return false;
+    }
+
+    const maxWidth = D / Math.SQRT2;
+    const fits = A * Math.SQRT2 <= D + 1e-9;
+
+    elementResult.value = (fits ? "Брус " + A + " поместится" : "Брус " + A + " не поместится") +
+        ". Максимальная ширина: " + maxWidth.toFixed(2);
+
+    elementDetails.innerText =
+        "Диаметр бревна D: " + D +
+        "\nШирина бруса A: " + A +
+        "\nДиагональ бруса A·√2: " + (A * Math.SQRT2).toFixed(4) +
+        "\nМаксимальная ширина D / √2: " + maxWidth.toFixed(4) +
+        "\n\n" + (fits
+            ? "Брус можно выпилить из данного бревна."
+            : "Нужно уменьшить ширину бруса до " + maxWidth.toFixed(4) + " или меньше.");
+
+    return true;
+}
+
+// Отправляет форму на сервер, только если задача решена без ошибок
+function send() {
+    if (solve()) {
+        elementForm.submit();
+    } else {
+        alert("Сначала введите корректные данные.");
+    }
+}
+
+document.getElementById("calc").addEventListener("click", solve);
+document.getElementById("send").addEventListener("click", send);
+</script>
+
+</body>
+</html>
