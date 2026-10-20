@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Формы — Звук и продакшн</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- Меню: одинаковое на всех страницах -->
+  <nav class="bar">
+    <div class="bar-inner">
+      <a class="logo" href="index.html">Звук и продакшн</a>
+      <div class="links">
+        <a href="forms.html" class="active">Формы</a>
+        <a href="table.html">Таблица</a>
+        <a href="dom_js.html">DOM_JS</a>
+        <a href="passport.html">Паспорт</a>
+        <a href="navigation.html">Навигация</a>
+        <a href="algorithm.html">Алг. задача</a>
+        <a href="navigation.html#s2">Инструменты</a>
+        <a href="https://www.soundonsound.com" target="_blank" rel="noopener">SOS ↗</a>
+        <a href="https://github.com/lakifase/egorka" target="_blank" rel="noopener" title="GitHub"><img class="icon" src="img/github.svg" alt="GitHub"></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Заголовок страницы -->
+  <header class="hero">
+    <h1>Формы</h1>
+  </header>
+
+  <!-- Содержимое -->
+  <main>
+    <h2>Контактные данные</h2>
+    <!-- Данные уходят на внешний сервер Bing методом GET: все поля видны в адресной строке -->
+    <form class="stack" action="https://www.bing.com/search" method="get">
+      <label>Фамилия <input type="text" name="last_name"></label>
+      <label>Имя <input type="text" name="first_name"></label>
+      <label>Группа <input type="text" name="group"></label>
+      <label>Телефон <input type="tel" name="phone"></label>
+      <label>Email <input type="email" name="email"></label>
+      <label>Дата отправки <input type="date" name="send_date"></label>
+
+      <!-- q нужен самому Bing, чтобы открыть страницу результатов -->
+      <input type="hidden" name="q" value="search">
+      <input type="submit" value="Отправить">
+    </form>
+
+    <h2>Заказ сэмпл-пака</h2>
+    <form class="stack" action="https://www.bing.com/search" method="get">
+      <label>Название пака <input type="text" name="pack_name" value="Ambient textures"></label>
+      <label>Количество <input type="number" name="quantity" min="1" max="10" value="1"></label>
+
+      <p>
+        Формат:
+        <label><input type="radio" name="format" value="wav" checked> WAV</label>
+        <label><input type="radio" name="format" value="aiff"> AIFF</label>
+      </p>
+
+      <label><input type="checkbox" name="stems" value="1" checked> Добавить стемы</label>
+      <label>Дата доставки <input type="date" name="delivery_date"></label>
+      <label>Пароль <input type="password" name="pwd"></label>
+      <label>Комментарий <textarea name="comment" rows="3" cols="40">Для заметок</textarea></label>
+
+      <!-- Скрытые поля и значения по умолчанию -->
+      <input type="hidden" name="q" value="search">
+      <input type="hidden" name="file_name" value="Ivanov_order.txt">
+      <input type="hidden" name="mode" value="a">
+      <input type="submit" value="Заказать">
+    </form>
+
+    <p><a href="#top">К началу ↑</a></p>
+  </main>
+
+</body>
+</html>

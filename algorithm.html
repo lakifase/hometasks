@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Решение алгоритмической задачи — Звук и продакшн</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- Меню: одинаковое на всех страницах -->
+  <nav class="bar">
+    <div class="bar-inner">
+      <a class="logo" href="index.html">Звук и продакшн</a>
+      <div class="links">
+        <a href="forms.html">Формы</a>
+        <a href="table.html">Таблица</a>
+        <a href="dom_js.html">DOM_JS</a>
+        <a href="passport.html">Паспорт</a>
+        <a href="navigation.html">Навигация</a>
+        <a href="algorithm.html" class="active">Алг. задача</a>
+        <a href="navigation.html#s2">Инструменты</a>
+        <a href="https://www.soundonsound.com" target="_blank" rel="noopener">SOS ↗</a>
+        <a href="https://github.com/lakifase/egorka" target="_blank" rel="noopener" title="GitHub"><img class="icon" src="img/github.svg" alt="GitHub"></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Заголовок страницы -->
+  <header class="hero">
+    <h1>Решение алгоритмической задачи</h1>
+  </header>
+
+  <!-- Содержимое -->
+  <main>
+    <h2>Бревно и брус</h2>
+    <p>
+      Бревно имеет круглое сечение диаметром D. Поместится ли в нём квадратный брус
+      шириной A? Если нет — какова наибольшая возможная ширина бруса?
+    </p>
+
+    <!-- Результат можно отправить на внешний сервер (как в примере) -->
+    <form action="https://www.bing.com/search" method="get">
+      <p class="row"><label for="D">D:</label> <input type="number" id="D" name="D" min="0" step="any"></p>
+      <p class="row"><label for="A">A:</label> <input type="number" id="A" name="A" min="0" step="any"></p>
+      <p class="row"><button type="button" id="check">Проверить</button></p>
+      <p class="row">
+        Результат: <input type="text" id="res" name="result" value="?" readonly size="32">
+        <input type="submit" value="Отправить">
+      </p>
+      <input type="hidden" name="q" value="search">
+    </form>
+
+    <p><small>Диагональ квадрата A·√2 не должна превышать D, поэтому наибольшая ширина бруса равна D/√2.</small></p>
+
+    <p><a href="#top">К началу ↑</a></p>
+  </main>
+
+  <script src="algorithm.js"></script>
+</body>
+</html>

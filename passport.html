@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Изменяем кириллицу на латиницу по клику — Звук и продакшн</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- Меню: одинаковое на всех страницах -->
+  <nav class="bar">
+    <div class="bar-inner">
+      <a class="logo" href="index.html">Звук и продакшн</a>
+      <div class="links">
+        <a href="forms.html">Формы</a>
+        <a href="table.html">Таблица</a>
+        <a href="dom_js.html">DOM_JS</a>
+        <a href="passport.html" class="active">Паспорт</a>
+        <a href="navigation.html">Навигация</a>
+        <a href="algorithm.html">Алг. задача</a>
+        <a href="navigation.html#s2">Инструменты</a>
+        <a href="https://www.soundonsound.com" target="_blank" rel="noopener">SOS ↗</a>
+        <a href="https://github.com/lakifase/egorka" target="_blank" rel="noopener" title="GitHub"><img class="icon" src="img/github.svg" alt="GitHub"></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Заголовок страницы -->
+  <header class="hero">
+    <h1>Изменяем кириллицу на латиницу по клику</h1>
+  </header>
+
+  <!-- Содержимое -->
+  <main>
+    <!-- Разворот паспорта: фон — скан бланка, данные наложены поверх -->
+    <div class="passport" id="pass">
+      <img src="img/passport.jpg" alt="Вторая и третья страницы паспорта">
+
+      <!-- Порядок абзацев важен для DOM: p[0] фамилия, p[1] имя, p[2] дата рождения -->
+      <p class="f" style="--x:41; --y:56.4"><span class="sr">Фамилия: </span><span class="translit">Приходченко</span></p>
+      <p class="f" style="--x:40; --y:63.9"><span class="sr">Имя: </span><span class="translit">Егор</span></p>
+      <p class="f" style="--x:59; --y:72.2"><span class="sr">Дата рождения: </span><span>14.03.<span id="by">2005</span></span></p>
+      <p class="f" style="--x:43; --y:67.7"><span class="sr">Отчество: </span><span class="translit">Андреевич</span></p>
+      <p class="f" style="--x:39; --y:72.2"><span class="sr">Пол: </span><span>МУЖ.</span></p>
+      <p class="f" style="--x:48; --y:75.0"><span class="sr">Место рождения: </span><span class="translit">ГОР. МОСКВА</span></p>
+      <p class="f" style="--x:20; --y:11.4"><span class="sr">Паспорт выдан: </span><span class="translit">ГУ МВД РОССИИ ПО Г. МОСКВЕ</span></p>
+      <p class="f" style="--x:18; --y:22.4"><span class="sr">Дата выдачи: </span><span>15.03.2019</span></p>
+      <p class="f" style="--x:57; --y:22.4"><span class="sr">Код подразделения: </span><span>770-001</span></p>
+    </div>
+
+    <button id="lat">Показать латиницей</button>
+
+    <p><a href="#top">К началу ↑</a></p>
+  </main>
+
+  <script src="passport.js"></script>
+</body>
+</html>
