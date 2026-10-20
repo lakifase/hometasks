@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Саунд-дизайн - Анкета и заказ</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', Consolas, monospace;
+            background-color: #101418;
+            color: #d8dee4;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 760px;
+            line-height: 1.5;
+        }
+
+        h1, h2 { color: #3ddc97; font-weight: normal; }
+        h1 { text-align: center; font-size: 26px; }
+        h2 { font-size: 20px; border-bottom: 1px solid #2a323a; padding-bottom: 4px; }
+
+        .menu { border-bottom: 2px solid #3ddc97; padding: 10px 0; margin-bottom: 20px; text-align: center; }
+        .menu ul { list-style: none; padding: 0; margin: 0; }
+        .menu li { display: inline; margin: 0 8px; }
+        .menu a { text-decoration: none; color: #d8dee4; }
+        .menu a.active { color: #3ddc97; }
+        .menu a:hover { color: #ffb454; }
+
+        .form-list { list-style: none; padding: 0; margin: 0; }
+        .form-list li { margin-bottom: 10px; }
+        label { display: inline-block; min-width: 190px; color: #b4bec8; }
+
+        input[type="text"], input[type="tel"], input[type="email"],
+        input[type="number"], input[type="password"], input[type="date"] {
+            font-family: inherit;
+            font-size: 14px;
+            background-color: #161c22;
+            color: #d8dee4;
+            border: 1px solid #2a323a;
+            padding: 5px 8px;
+            width: 250px;
+        }
+        input:focus { outline: none; border-color: #3ddc97; }
+        input[readonly] { width: 100%; max-width: 480px; color: #ffb454; }
+
+        input[type="button"], input[type="submit"], input[type="reset"] {
+            font-family: inherit;
+            font-size: 14px;
+            background-color: transparent;
+            color: #3ddc97;
+            border: 1px solid #3ddc97;
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+            color: #ffb454;
+            border-color: #ffb454;
+        }
+        .choice { margin-right: 14px; white-space: nowrap; }
+        hr { border: none; border-top: 1px solid #2a323a; margin: 30px 0; }
+        .note { color: #8b96a1; font-style: italic; font-size: 13px; }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="main_page.html">Главная</a></li>
+            <li><a href="about.html">Основы</a></li>
+            <li><a href="table.html">Галерея</a></li>
+            <li><a href="form.html" class="active">Анкета и заказ</a></li>
+            <li><a href="passport.html">Паспорт</a></li>
+            <li><a href="task.html">Задача</a></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Саунд-дизайн" target="_blank">Википедия</a></li>
+        </ul>
+    </div>
+
+    <h1>Анкета и заказ</h1>
+
+    <h2>1. Анкета: контактные данные</h2>
+    <form action="https://www.bing.com/search" method="get" id="UserEnter" name="UserEnter" target="_blank">
+        <ul class="form-list">
+            <input type="hidden" name="q" value="Анкета саунд-дизайн">
+
+            <li><label for="lastname">Фамилия:</label> <input id="lastname" name="lastname" type="text" value="Иванов"></li>
+            <li><label for="firstname">Имя:</label> <input id="firstname" name="firstname" type="text" value="Иван"></li>
+            <li><label for="group">Группа:</label> <input id="group" name="group" type="text" value="ИСТ-231"></li>
+            <li><label for="phone">Мобильный (цифры):</label> <input id="phone" name="phone" type="tel" value="89001234567"></li>
+            <li><label for="email">E-mail:</label> <input id="email" name="email" type="email" value="ivan@example.com"></li>
+            <li><label for="date">Дата отправки:</label> <input id="date" name="date" type="date"></li>
+
+            <li><label for="result">Статус проверки:</label> <input id="result" name="result" type="text" value="не проверено" readonly></li>
+
+            <li>
+                <input id="checkForm" type="button" value="Проверить данные">
+                <input id="sendForm" type="button" value="Отправить">
+            </li>
+        </ul>
+    </form>
+
+    <hr>
+
+    <h2>2. Заказ звукового оформления</h2>
+    <form action="https://www.bing.com/search" method="get" id="OrderForm" name="OrderForm" target="_blank">
+        <ul class="form-list">
+            <input type="hidden" name="q" value="Заказ звукового оформления">
+            <input type="hidden" name="source" value="sound-design-site">
+
+            <li><label for="project_name">Название проекта:</label> <input id="project_name" name="project_name" type="text" value="Короткометражный фильм"></li>
+            <li><label for="duration_min">Длительность (мин):</label> <input id="duration_min" name="duration_min" type="number" min="1" value="10"></li>
+            <li><label for="order_pass">Пароль заказа:</label> <input id="order_pass" name="order_pass" type="password" value="sound123"></li>
+            <li><label for="deadline">Срок сдачи:</label> <input id="deadline" name="deadline" type="date" value="2026-11-20"></li>
+
+            <li>
+                <label>Тип работы:</label>
+                <span class="choice"><input type="radio" name="work_type" value="effects" checked> Шумы и эффекты</span>
+                <span class="choice"><input type="radio" name="work_type" value="music"> Музыка</span>
+                <span class="choice"><input type="radio" name="work_type" value="mixing"> Сведение</span>
+            </li>
+
+            <li>
+                <label>Дополнительно:</label>
+                <span class="choice"><input type="checkbox" name="mastering" value="yes" checked> Мастеринг</span>
+                <span class="choice"><input type="checkbox" name="stems" value="yes"> Отдельные дорожки</span>
+                <span class="choice"><input type="checkbox" name="urgent" value="yes"> Срочно</span>
+            </li>
+
+            <li>
+                <input type="submit" value="Оформить заказ">
+                <input type="reset" value="Очистить">
+            </li>
+        </ul>
+    </form>
+    <p class="note">Данные уходят на удалённый сервер (в примере — поиск Bing) в адресной строке, значения по умолчанию тоже отправляются.</p>
+
+    <script src="form.js"></script>
+</body>
+</html>

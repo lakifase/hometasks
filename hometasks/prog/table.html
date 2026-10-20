@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Саунд-дизайн - Галерея</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', Consolas, monospace;
+            background-color: #101418;
+            color: #d8dee4;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 760px;
+            line-height: 1.5;
+        }
+
+        h1, h2 { color: #3ddc97; font-weight: normal; }
+        h1 { text-align: center; font-size: 26px; }
+        h2 { font-size: 20px; border-bottom: 1px solid #2a323a; padding-bottom: 4px; }
+
+        .menu { border-bottom: 2px solid #3ddc97; padding: 10px 0; margin-bottom: 20px; text-align: center; }
+        .menu ul { list-style: none; padding: 0; margin: 0; }
+        .menu li { display: inline; margin: 0 8px; }
+        .menu a { text-decoration: none; color: #d8dee4; }
+        .menu a.active { color: #3ddc97; }
+        .menu a:hover { color: #ffb454; }
+
+        a { color: #3ddc97; }
+        a:hover { color: #ffb454; }
+        section { margin-bottom: 30px; }
+        .note { color: #8b96a1; font-style: italic; }
+        .top { display: block; text-align: right; font-size: 14px; }
+
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #2a323a; padding: 8px; text-align: left; vertical-align: middle; }
+        th { color: #3ddc97; font-weight: normal; background-color: #161c22; }
+
+        td img { display: block; width: 100%; max-width: 200px; border: 1px solid #2a323a; filter: saturate(0.8) brightness(0.95); }
+        td img:hover { filter: none; }
+        .yes { color: #3ddc97; }
+        .no { color: #8b96a1; }
+    </style>
+</head>
+
+<body>
+    <a name="top"></a>
+
+    <div class="menu">
+        <ul>
+            <li><a href="main_page.html">Главная</a></li>
+            <li><a href="about.html">Основы</a></li>
+            <li><a href="table.html" class="active">Таблицы</a></li>
+            <li><a href="form.html">Анкета и заказ</a></li>
+            <li><a href="passport.html">Паспорт</a></li>
+            <li><a href="task.html">Задача</a></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Саунд-дизайн" target="_blank">Википедия</a></li>
+        </ul>
+    </div>
+
+    <h1>Галерея</h1>
+    <p style="text-align: center;">Фото из мира звука в разных форматах. Нажмите на картинку, 
+        чтобы открыть её в новой вкладке.</p>
+
+    <section>
+        <h2>Сравнение форматов</h2>
+        <table>
+            <tr>
+                <th>Формат</th>
+                <th>Сжатие</th>
+                <th>Прозрачность</th>
+                <th>Анимация</th>
+                <th>Лучше для</th>
+                <th>Подробнее</th>
+            </tr>
+            <tr>
+                <td>JPG / JPEG</td>
+                <td>с потерями</td>
+                <td class="no">нет</td>
+                <td class="no">нет</td>
+                <td>фотографии</td>
+                <td><a href="https://ru.wikipedia.org/wiki/JPEG" target="_blank">JPEG</a></td>
+            </tr>
+            <tr>
+                <td>PNG</td>
+                <td>без потерь</td>
+                <td class="yes">да</td>
+                <td class="no">нет</td>
+                <td>логотипы, скриншоты</td>
+                <td><a href="https://ru.wikipedia.org/wiki/PNG" target="_blank">PNG</a></td>
+            </tr>
+            <tr>
+                <td>WebP</td>
+                <td>оба варианта</td>
+                <td class="yes">да</td>
+                <td class="yes">да</td>
+                <td>сайты, лёгкие картинки</td>
+                <td><a href="https://ru.wikipedia.org/wiki/WebP" target="_blank">WebP</a></td>
+            </tr>
+            <tr>
+                <td>GIF</td>
+                <td>без потерь, 256 цветов</td>
+                <td class="yes">да</td>
+                <td class="yes">да</td>
+                <td>короткие анимации</td>
+                <td><a href="https://ru.wikipedia.org/wiki/GIF" target="_blank" >GIF</a> </td>
+            </tr>
+            <tr>
+                <td>SVG</td>
+                <td>векторный</td>
+                <td class="yes">да</td>
+                <td class="yes">да</td>
+                <td>иконки, схемы</td>
+                <td><a href="https://ru.wikipedia.org/wiki/SVG" target="_blank">SVG</a></td>
+            </tr>
+        </table>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+
+    <section>
+        <h2>Фото в формате JPG / JPEG</h2>
+        <table>
+            <tr>
+                <th width="40%">Изображение</th>
+                <th>Название</th>
+                <th>Формат</th>
+                <th>Ссылка</th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="../photos/studio.jpg" target="_blank" title="Студия звукорежиссёра">
+                        <img src="../photos/studio.jpg" alt="Студия звукорежиссёра">
+                    </a>
+                </td>
+                <td>Студия звукорежиссёра</td>
+                <td>JPG</td>
+                <td><a href="../photos/studio.jpg" target="_blank">открыть</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="../photos/microphone.jpg" target="_blank" title="Микрофон">
+                        <img src="../photos/microphone.jpg" alt="Микрофон">
+                    </a>
+                </td>
+                <td>Микрофон</td>
+                <td>JPG</td>
+                <td><a href="../photos/microphone.jpg" target="_blank">открыть</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="../photos/DAW.jpeg" target="_blank" title="Окно программы DAW">
+                        <img src="../photos/DAW.jpeg" alt="Окно программы DAW">
+                    </a>
+                </td>
+                <td>Окно программы DAW</td>
+                <td>JPEG</td>
+                <td><a href="../photos/DAW.jpeg" target="_blank">открыть</a></td>
+            </tr>
+        </table>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+
+    <section>
+        <h2>Графика в формате PNG</h2>
+        <table>
+            <tr>
+                <th width="40%">Изображение</th>
+                <th>Название</th>
+                <th>Формат</th>
+                <th>Ссылка</th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="../photos/airpods.png" target="_blank" title="Студийные наушники">
+                        <img src="../photos/airpods.png" alt="Студийные наушники">
+                    </a>
+                </td>
+                <td>Студийные наушники</td>
+                <td>PNG</td>
+                <td><a href="../photos/airpods.png" target="_blank">открыть</a></td>
+            </tr>
+        </table>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+<section>
+        <a name="big"></a>
+        <h2>Большие изображения</h2>
+        <p>Нажмите на миниатюру: фото 600×400 откроется в новом окне по центру экрана.</p>
+        <table>
+            <tr>
+                <th>Миниатюра</th>
+                <th>Название</th>
+                <th>Размер в окне</th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="../photos/studio.jpg" target="_blank" title="Студия звукорежиссёра" onclick="return openBig(this.href, this.title)">
+                        <img class="thumb" src="../photos/studio.jpg" alt="Студия звукорежиссёра>
+                    </a>
+                </td>
+                <td>Студия звукорежиссёра</td>
+                <td>600 × 400</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="../photos/microphone.jpg" target="_blank" title="Микрофон" onclick="return openBig(this.href, this.title)">
+                        <img class="thumb" src="../photos/microphone.jpg" alt="Микрофон">
+                    </a>
+                </td>
+                <td>Микрофон</td>
+                <td>600 × 400</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="../photos/DAW.jpeg" target="_blank" title="Окно программы DAW" onclick="return openBig(this.href, this.title)">
+                        <img class="thumb" src="../photos/DAW.jpeg" alt="Окно программы DAW">
+                    </a>
+                </td>
+                <td>Окно программы DAW</td>
+                <td>600 × 400</td>
+            </tr>
+        </table>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+ 
+    <section>
+        <a name="bgtable"></a>
+        <h2>Таблица с фоном</h2>
+        <p>Фон всей таблицы, фото в ячейке, картинка-ссылка и текстовые ссылки.</p>
+        <table class="bg" cellpadding="10" cellspacing="0">
+            <tr>
+                <th colspan="2">Рабочее место саунд-дизайнера</th>
+            </tr>
+            <tr>
+                <td width="40%" align="center">
+                    <a href="../photos/microphone.jpg" target="_blank" title="Микрофон">
+                        <img src="../photos/microphone.jpg" alt="Микрофон">
+                    </a>
+                </td>
+                <td valign="top">
+                    <p>Полезные ссылки:</p>
+                    <ul>
+                        <li><a href="about.html">Основы саунд-дизайна</a></li>
+                        <li><a href="https://ru.wikipedia.org/wiki/Саунд-дизайн" target="_blank">Саунд-дизайн в Википедии</a></li>
+                        <li><a href="../photos/studio.jpg" target="_blank">Фон таблицы целиком</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="main_page.html">← На главную</a>
+                </td>
+            </tr>
+        </table>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+
+    <script>
+        // Открывает картинку 600x400 в новом окне по центру экрана
+        function openBig(url, title) {
+            var w = 600, h = 400;
+            var win = window.open('', '_blank', 'width=' + w + ',height=' + h + ',left=' + left + ',top=' + top);
+            if (!win) { return true; } // окно заблокировано: откроется обычная вкладка
+            win.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>' + title + '</title></head>' +
+                '<body style="margin:0;background:#101418;"><img src="' + url + '" width="' + w + '" height="' + h + '" ' +
+                'style="display:block;object-fit:cover;"></body></html>');
+            win.document.close();
+            return false;
+        }
+    </script>
+ 
+</body>
+</html>

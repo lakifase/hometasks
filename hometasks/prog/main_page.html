@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Саунд-дизайн - Главная</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', Consolas, monospace;
+            background-color: #101418;
+            color: #d8dee4;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 760px;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3 { color: #3ddc97; font-weight: normal; }
+        h1 { text-align: center; font-size: 28px; }
+        h2 { font-size: 20px; border-bottom: 1px solid #2a323a; padding-bottom: 4px; }
+        h3 { font-size: 16px; color: #ffb454; margin: 0 0 4px 0; }
+
+        .menu { border-bottom: 2px solid #3ddc97; padding: 10px 0; margin-bottom: 20px; text-align: center; }
+        .menu ul { list-style: none; padding: 0; margin: 0; }
+        .menu li { display: inline; margin: 0 8px; }
+        .menu a { text-decoration: none; color: #d8dee4; }
+        .menu a.active { color: #3ddc97; }
+        .menu a:hover { color: #ffb454; }
+
+        a { color: #3ddc97; }
+        section { margin-bottom: 30px; }
+        .note { color: #8b96a1; font-style: italic; }
+
+        img { display: block; width: 100%; border: 1px solid #2a323a; filter: saturate(0.8) brightness(0.95); }
+        img:hover { filter: none; }
+        figure { margin: 15px 0; }
+        figcaption { font-size: 13px; color: #8b96a1; margin-top: 4px; }
+
+        .cards { display: flex; flex-wrap: wrap; gap: 10px; }
+        .card { flex: 1 1 30%; border: 1px solid #2a323a; padding: 10px; text-decoration: none; color: #d8dee4; }
+        .card:hover { border-color: #ffb454; }
+        .card span { font-size: 14px; color: #8b96a1; }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="main_page.html" class="active">Главная</a></li>
+            <li><a href="about.html">Основы</a></li>
+            <li><a href="table.html">Таблицы</a></li>
+            <li><a href="form.html">Анкета и заказ</a></li>
+            <li><a href="passport.html">Паспорт</a></li>
+            <li><a href="task.html">Задача</a></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Саунд-дизайн" target="_blank">Википедия</a></li>
+        </ul>
+    </div>
+
+    <h1>Саунд-дизайн</h1>
+    <p style="text-align: center;">Как создаётся звук для фильмов, игр и приложений.</p>
+
+    <figure>
+    <a href="../photos/studio.jpg" target="_blank" title="Студия звукорежиссёра">
+        <img src="../photos/studio.jpg" alt="Студия звукорежиссёра">
+    </a>
+    <figcaption>Звук — половина впечатления от картинки.</figcaption>
+</figure>
+
+    <section>
+        <h2>О сайте</h2>
+        <p>Здесь собраны основы профессии: из чего состоит звук, какие нужны инструменты и как строится работа над звуковым оформлением.</p>
+        <ul>
+            <li>Простые объяснения терминов</li>
+            <li>Фото рабочих инструментов</li>
+            <li>Форма для заказа звукового оформления</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Разделы</h2>
+        <div class="cards">
+            <a class="card" href="about.html"><h3>Основы</h3><span>Звук, инструменты, этапы</span></a>
+            <a class="card" href="table.html"><h3>Таблицы</h3><span>примеры оборудования</span></a>
+            <a class="card" href="form.html"><h3>Анкета и заказ</h3><span>Оставить заявку</span></a>
+            <a class="card" href="passport.html"><h3>Паспорт</h3><span>Данные о проекте</span></a>
+            <a class="card" href="task.html"><h3>Задача</h3><span>Практическое задание</span></a>
+        </div>
+    </section>
+
+    <p class="note">Начните с раздела «Основы».</p>
+</body>
+</html>

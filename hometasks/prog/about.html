@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Саунд-дизайн - Об основах</title>
+
+    <style>
+        body {
+            font-family: 'Courier New', Consolas, monospace;
+            background-color: #101418;
+            color: #d8dee4;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 760px;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3 { color: #3ddc97; font-weight: normal; }
+        h1 { text-align: center; font-size: 26px; }
+        h2 { font-size: 20px; border-bottom: 1px solid #2a323a; padding-bottom: 4px; }
+        h3 { font-size: 16px; color: #ffb454; margin-bottom: 4px; }
+
+        .menu { border-bottom: 2px solid #3ddc97; padding: 10px 0; margin-bottom: 20px; text-align: center; }
+        .menu ul { list-style: none; padding: 0; margin: 0; }
+        .menu li { display: inline; margin: 0 8px; }
+        .menu a { text-decoration: none; color: #d8dee4; }
+        .menu a.active { color: #3ddc97; }
+        .menu a:hover { color: #ffb454; }
+
+        .anchors { text-align: center; margin-bottom: 25px; }
+        .anchors a { color: #ffb454; margin: 0 10px; }
+
+        section { margin-bottom: 30px; }
+        a { color: #3ddc97; }
+        .top { display: block; text-align: right; font-size: 14px; }
+        .note { color: #8b96a1; font-style: italic; }
+
+        /* фото */
+        img { display: block; width: 100%; border: 1px solid #2a323a; filter: saturate(0.8) brightness(0.95); }
+        img:hover { filter: none; }
+        figure { margin: 15px 0; }
+        figcaption { font-size: 13px; color: #8b96a1; margin-top: 4px; }
+        .photos { display: flex; gap: 10px; margin: 15px 0; }
+        .photos figure { flex: 1; margin: 0; }
+
+        dt { color: #3ddc97; margin-top: 8px; }
+        dd { margin-left: 20px; color: #b4bec8; }
+        ul.check { list-style: none; padding-left: 0; }
+        ul.check li:before { content: "[ ] "; color: #3ddc97; }
+        .cols { display: flex; gap: 30px; }
+        .cols > div { flex: 1; }
+    </style>
+</head>
+
+<body>
+    <a name="top"></a>
+
+    <div class="menu">
+        <ul>
+            <li><a href="main_page.html">Главная</a></li>
+            <li><a href="about.html" class="active">Основы</a></li>
+            <li><a href="table.html">Таблицы</a></li>
+            <li><a href="form.html">Анкета и заказ</a></li>
+            <li><a href="passport.html">Паспорт</a></li>
+            <li><a href="task.html">Задача</a></li>
+            <li><a href="https://ru.wikipedia.org/wiki/Саунд-дизайн" target="_blank">Википедия</a></li>
+        </ul>
+    </div>
+
+    <h1>Основы саунд-дизайна</h1>
+    <p style="text-align: center;">Саунд-дизайн создаёт звуковой образ фильма, игры или интерфейса. Коротко о главном.</p>
+
+    <figure>
+        <img src="../photos/studio.jpg" alt="Студия звукорежиссёра" height="500" width="500">
+        <figcaption>Рабочее место саунд-дизайнера: мониторы, микшер, наушники.</figcaption>
+    </figure>
+
+    <div class="anchors">
+        <a href="#basics">Что такое звук</a>
+        <a href="#tools">Инструменты</a>
+        <a href="#workflow">Этапы работы</a>
+        <a href="#where">Где применяется</a>
+    </div>
+
+    <section>
+        <a name="basics"></a>
+        <h2>Что такое звук</h2>
+        <p>Любой звук описывается несколькими параметрами. Вот основные термины:</p>
+        <dl>
+            <dt><b>Частота</b></dt>
+            <dd><i>Cкорость, с которой колеблются звуковые волны, измеряемая в герцах (Гц) или килогерцах (кГц).</i></dd>
+            <dt><b>Амплитуда</b></dt>
+            <dd><i>Максимальное отклонение параметров звуковой волны (давления воздуха или смещения частиц среды) 
+                от положения равновесия.</i></dd>
+            <dt><b>Тембр</b></dt>
+            <dd><i>Характерная окраска звука, которая позволяет отличить один инструмент 
+                или голос от другого, даже если они берут одинаковую ноту с одинаковой громкостью.</i></dd>
+            <dt><b>Огибающая</dt>
+            <dt><i>Функция, которая описывает изменение какого-либо параметра звукового сигнала 
+                (чаще всего громкости или частоты среза фильтра) во времени</i></dt>
+        </dl>
+
+        <h3>Диапазоны частот</h3>
+        <ul>
+            <li>Низкие (20–250 Гц)
+                <ul>
+                    <li>бас, бочка, гул</li>
+                </ul>
+            </li>
+            <li>Средние (250 Гц – 4 кГц)
+                <ul>
+                    <li>голос, большинство инструментов</li>
+                </ul>
+            </li>
+            <li>Высокие (4–20 кГц)
+                <ul>
+                    <li>шипящие, тарелки, «воздух»</li>
+                </ul>
+            </li>
+        </ul>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+
+    <section>
+        <a name="tools"></a>
+        <h2>Инструменты</h2>
+        <table border="1" cellpadding="6" cellspacing="0" width="100%" style="border-color: #2a323a;">
+            <tr style="color: #3ddc97;">
+                <td>Тип</td>
+                <td>Примеры</td>
+                <td>Для чего</td>
+            </tr>
+            <tr>
+                <td>DAW</td>
+                <td>Reaper, Ableton Live, FL Studio</td>
+                <td>Запись и монтаж</td>
+            </tr>
+            <tr>
+                <td>Синтезаторы</td>
+                <td>Serum, Vital</td>
+                <td>Создание звуков с нуля</td>
+            </tr>
+            <tr>
+                <td>Плагины</td>
+                <td>EQ, компрессор, реверб</td>
+                <td>Обработка</td>
+            </tr>
+            <tr>
+                <td>Микрофон</td>
+                <td>Динамический, конденсаторный</td>
+                <td>Запись шумов (foley)</td>
+            </tr>
+        </table>
+
+        <div class="photos">
+    <figure>
+        <a href="../photos/microphone.jpg" target="_blank" title="Микрофон">
+            <img src="../photos/microphone.jpg" alt="Микрофон" height="90" width="90">
+        </a>
+        <figcaption>Микрофон</figcaption>
+    </figure>
+    <figure>
+        <a href="../photos/DAW.jpeg" target="_blank" title="Окно программы DAW">
+            <img src="../photos/DAW.jpeg" alt="Окно программы DAW" height="600" width="400">
+        </a>
+        <figcaption>DAW</figcaption>
+    </figure>
+    <figure>
+        <a href="../photos/airpods.png" target="_blank" title="Студийные наушники">
+            <img src="../photos/airpods.png" alt="Студийные наушники" height="300" width="300">
+        </a>
+        <figcaption>Наушники</figcaption>
+    </figure>
+        </div>
+
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+
+    <section>
+        <a name="workflow"></a>
+        <h2>Этапы работы</h2>
+        <div class="cols">
+            <div>
+                <h3>По порядку</h3>
+                <ol>
+                    <li>Изучить задачу и референсы.</li>
+                    <li>Записать или подобрать звуки.</li>
+                    <li>Обработать: эквализация, компрессия, эффекты.</li>
+                    <li>Смонтировать под картинку.</li>
+                    <li>Свести уровни.</li>
+                </ol>
+            </div>
+            <div>
+                <h3>Перед сдачей проверить</h3>
+                <ul class="check">
+                    <li>нет щелчков и клиппинга</li>
+                    <li>голос разборчив</li>
+                    <li>громкость ровная</li>
+                    <li>звучит на колонках и наушниках</li>
+                </ul>
+            </div>
+        </div>
+
+        <figure>
+            <figure>
+    <a href="../photos/foley.jpg" target="_blank" title="Запись шумов foley">
+        <img src="../photos/foley.avif" alt="Запись шумов foley"> </a>
+    <figcaption>Foley: звуки шагов и предметов записывают вручную.</figcaption>
+        </figure>
+            <figcaption>Foley: звуки шагов и предметов записывают вручную.</figcaption>
+        </figure>
+        <p class="note">Совет: делайте перерывы, на уставшие уши сведение получается хуже.</p>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+
+    <section>
+        <a name="where"></a>
+        <h2><u>Где применяется?</u></h2>
+        <ul>
+            <li>Кино и сериалы</li>
+            <li>Видеоигры</li>
+            <li>Реклама и подкасты</li>
+            <li>Интерфейсы приложений</li>
+        </ul>
+        <a class="top" href="#top">наверх ↑</a>
+    </section>
+</body>
+</html>
