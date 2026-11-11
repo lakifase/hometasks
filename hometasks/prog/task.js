@@ -1,13 +1,13 @@
-const elementD = document.getElementById("d");
-const elementA = document.getElementById("a");
-const elementResult = document.getElementById("result");
-const elementDetails = document.getElementById("details");
-const elementForm = document.getElementById("UserEnter");
+var elementD = document.getElementById("d");
+var elementA = document.getElementById("a");
+var elementResult = document.getElementById("result");
+var elementDetails = document.getElementById("details");
+var elementForm = document.getElementById("UserEnter");
 
 // Считает ответ. Возвращает true, если данные корректны
 function solve() {
-    const D = parseFloat(elementD.value);
-    const A = parseFloat(elementA.value);
+    var D = parseFloat(elementD.value);
+    var A = parseFloat(elementA.value);
 
     if (!(D > 0) || !(A > 0)) {
         elementResult.value = "Ошибка: введите положительные числа";
@@ -15,8 +15,8 @@ function solve() {
         return false;
     }
 
-    const maxWidth = D / Math.SQRT2;
-    const fits = A * Math.SQRT2 <= D + 1e-9;
+    var maxWidth = D / Math.SQRT2;
+    var fits = A * Math.SQRT2 <= D + 1e-9;
 
     elementResult.value = (fits ? "Брус " + A + " поместится" : "Брус " + A + " не поместится") +
         ". Максимальная ширина: " + maxWidth.toFixed(2);
@@ -33,7 +33,7 @@ function solve() {
     return true;
 }
 
-// Отправляет форму на сервер, только если задача решена без ошибок
+// Отправляет форму, только если задача решена без ошибок
 function send() {
     if (solve()) {
         elementForm.submit();

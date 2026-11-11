@@ -1,29 +1,28 @@
 // ---------- Транслитерация по клику ----------
 
-const table = {
+var table = {
     а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ё: "yo", ж: "zh",
     з: "z", и: "i", й: "y", к: "k", л: "l", м: "m", н: "n", о: "o",
     п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f", х: "kh", ц: "ts",
     ч: "ch", ш: "sh", щ: "shch", ъ: "", ы: "y", ь: "", э: "e", ю: "yu", я: "ya"
 };
 
-// Переводит строку. Если слово написано ЗАГЛАВНЫМИ, результат тоже заглавный
+// ИВАНОВ -> IVANOV, Иван -> Ivan
 function transliterate(text) {
-    const allUpper = text === text.toUpperCase();
-    let result = "";
-
-    for (const char of text) {
-        const lower = char.toLowerCase();
-        const latin = table[lower];
-
+    var allUpper = text === text.toUpperCase();
+    var result = "";
+    for (var i = 0; i < text.length; i++) {
+        var char = text[i];
+        var lower = char.toLowerCase();
+        var latin = table[lower];
         if (latin === undefined) {
-            result += char;                              // не кириллица: оставляем
+            result += char;
         } else if (char === lower) {
-            result += latin;                             // строчная буква
+            result += latin;
         } else if (allUpper) {
-            result += latin.toUpperCase();               // ИВАНОВ -> IVANOV
+            result += latin.toUpperCase();
         } else {
-            result += latin.charAt(0).toUpperCase() + latin.slice(1); // Иван -> Ivan
+            result += latin.charAt(0).toUpperCase() + latin.slice(1);
         }
     }
     return result;
@@ -31,76 +30,54 @@ function transliterate(text) {
 
 // Год рождения латинскими символами — римскими цифрами
 function toRoman(number) {
-    const parts = [
-        [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"],
-        [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]
-    ];
-    let result = "";
-    for (const [value, symbol] of parts) {
-        while (number >= value) {
-            result += symbol;
-            number -= value;
+    var parts = [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"],
+                 [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]];
+    var result = "";
+    for (var i = 0; i < parts.length; i++) {
+        while (number >= parts[i][0]) {
+            result += parts[i][1];
+            number -= parts[i][0];
         }
     }
     return result;
 }
 
-const latButton = document.getElementById("lat");
-const birthYearElement = document.getElementById("birthYear");
-const fields = document.querySelectorAll(".translit");
+var latButton = document.getElementById("lat");
+var birthYear = document.getElementById("birthYear");
+var fields = document.querySelectorAll(".translit");
 
 // Запоминаем исходные значения, чтобы вернуть кириллицу
-const originalYear = birthYearElement.textContent;
-const originalFields = [];
-for (const element of fields) {
-    originalFields.push(element.textContent);
+var originalYear = birthYear.textContent;
+var originalFields = [];
+for (var i = 0; i < fields.length; i++) {
+    originalFields.push(fields[i].textContent);
 }
 
-let isLatin = false;
+var isLatin = false;
 
 latButton.addEventListener("click", function () {
-    if (!isLatin) {
-        // кириллица -> латиница (всегда из исходных значений)
-        fields.forEach(function (element, i) {
-            element.textContent = transliterate(originalFields[i]);
-        });
-        birthYearElement.textContent = toRoman(parseInt(originalYear, 10));
-        latButton.textContent = "Вернуть кириллицу";
-    } else {
-        // обратно
-        fields.forEach(function (element, i) {
-            element.textContent = originalFields[i];
-        });
-        birthYearElement.textContent = originalYear;
-        latButton.textContent = "Показать латиницей";
+    for (var i = 0; i < fields.length; i++) {
+        fields[i].textContent = isLatin ? originalFields[i] : transliterate(originalFields[i]);
     }
+    birthYear.textContent = isLatin ? originalYear : toRoman(parseInt(originalYear, 10));
+    latButton.textContent = isLatin ? "Показать латиницей" : "Вернуть кириллицу";
     isLatin = !isLatin;
 });
 
 // ---------- Считывание данных из DOM ----------
 
-const readButton = document.getElementById("readData");
-const output = document.getElementById("output");
+document.getElementById("readData").addEventListener("click", function () {
+    // Абзацы по порядку: [0] вводная, [1] фамилия, [2] имя, [3] год рождения
+    var p = document.getElementsByTagName("p");
 
-// Берёт текст из span.value внутри абзаца
-function getValue(paragraph) {
-    return paragraph.querySelector(".value").innerText.trim();
-}
-
-readButton.addEventListener("click", function () {
-    // Абзацы по порядку: [0] вводная заметка, [1] фамилия, [2] имя, [3] год рождения
-    const paragraphs = document.getElementsByTagName("p");
-
-    const surname = getValue(paragraphs[1]);
-    const firstName = getValue(paragraphs[2]);
-    const birthYear = getValue(paragraphs[3]);
+    var surname = p[1].getElementsByTagName("span")[0].innerText;
+    var firstName = p[2].getElementsByTagName("span")[0].innerText;
+    var year = p[3].getElementsByTagName("span")[0].innerText;
 
     console.log("Фамилия:", surname);
     console.log("Имя:", firstName);
-    console.log("Год рождения:", birthYear);
+    console.log("Год рождения:", year);
 
-    output.innerText =
-        "Фамилия: " + surname +
-        " | Имя: " + firstName +
-        " | Год рождения: " + birthYear;
+    document.getElementById("output").innerText =
+        "Фамилия: " + surname + " | Имя: " + firstName + " | Год рождения: " + year;
 });
